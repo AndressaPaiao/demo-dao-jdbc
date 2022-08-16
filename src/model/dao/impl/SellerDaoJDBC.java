@@ -47,7 +47,7 @@ public class SellerDaoJDBC implements SellerDao {
                             +"WHERE seller.Id = ?");
             st.setInt(1, id);
             rs = st.executeQuery();
-            if (rs.next()) { //se rs for falso ele retorna nulo senao ele retorna o objeto do vendedor com departamento
+            if (rs.next()) { 
                 Department dep = instantiateDepartment(rs);
                 Seller obj = instantiateSeller(rs, dep);
                 return obj;
